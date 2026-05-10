@@ -11,7 +11,7 @@ public class TestAdmin {
 		
 		adminVentas admin = new adminVentas();
 
-        Vendedor vBase = new Vendedor("1700000001");
+        Vendedor vBase = new Vendedor("1700000001","V");
         VendedorComision vComision = new VendedorComision("1700000002");
         VendedorMixto vMixto = new VendedorMixto("1700000003");
 
