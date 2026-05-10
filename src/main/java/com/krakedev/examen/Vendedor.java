@@ -5,6 +5,7 @@ public class Vendedor {
 	private int numeroVentas;
 	private double sueldoFijo;
 	private double comisionPorVenta;
+	private String tipo;
 
 	public Vendedor(String cedula) {
 		this.cedula = cedula;
