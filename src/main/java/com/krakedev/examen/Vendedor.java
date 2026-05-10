@@ -11,6 +11,14 @@ public class Vendedor {
 		this.cedula = cedula;
 		this.tipo = tipo;
 	}
+	
+	
+
+	public Vendedor() {
+		super();
+	}
+
+
 
 	public String getCedula() {
 		return cedula;

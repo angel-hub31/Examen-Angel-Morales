@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import com.krakedev.examen.Vendedor;
 
 public class adminVentas {
+	
+	public ArrayList<Vendedor> getVendedores() {
+        return vendedores;
+    }
 	private ArrayList<Vendedor> vendedores=new ArrayList<>();
 	
 	public void agregar(Vendedor vendedor) {

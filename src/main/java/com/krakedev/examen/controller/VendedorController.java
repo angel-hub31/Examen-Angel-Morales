@@ -1,5 +1,7 @@
 package com.krakedev.examen.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.web.bind.annotation.*;
 
 import com.krakedev.examen.Vendedor;
@@ -14,47 +16,35 @@ public class VendedorController {
     private static adminVentas admin = new adminVentas();
 
     @PostMapping("/agregar")
-    public void agregarVendedor(@RequestBody Vendedor vendedor) {
-
+    public Vendedor agregarVendedor(@RequestBody Vendedor vendedor) { // Cambiado de void a Vendedor
         Vendedor nuevoVendedor = null;
 
         if (vendedor.getTipo().equals("V")) {
-
-            nuevoVendedor = new Vendedor(
-                    vendedor.getCedula(),
-                    "V");
-
+            nuevoVendedor = new Vendedor(vendedor.getCedula(), "V");
         } else if (vendedor.getTipo().equals("C")) {
-
-            nuevoVendedor = new VendedorComision(
-                    vendedor.getCedula());
-
+            nuevoVendedor = new VendedorComision(vendedor.getCedula());
         } else if (vendedor.getTipo().equals("M")) {
-
-            nuevoVendedor = new VendedorMixto(
-                    vendedor.getCedula());
-
-        } else {
-            return;
+            nuevoVendedor = new VendedorMixto(vendedor.getCedula());
         }
 
-        // copiar datos del JSON
-        nuevoVendedor.setSueldoFijo(
-                vendedor.getSueldoFijo());
+        if (nuevoVendedor != null) {
+            nuevoVendedor.setSueldoFijo(vendedor.getSueldoFijo());
+            nuevoVendedor.setNumeroVentas(vendedor.getNumeroVentas());
+            nuevoVendedor.setComisionPorVenta(vendedor.getComisionPorVenta());
 
-        nuevoVendedor.setNumeroVentas(
-                vendedor.getNumeroVentas());
+            admin.agregar(nuevoVendedor);
+        }
 
-        nuevoVendedor.setComisionPorVenta(
-                vendedor.getComisionPorVenta());
-
-        admin.agregar(nuevoVendedor);
+        return nuevoVendedor;
     }
-
     @GetMapping("/calcular/{cedula}")
     public Double calcularSueldoVendedor(
             @PathVariable String cedula) {
 
         return admin.calcularSueldo(cedula);
+    }
+    @GetMapping("/listar")
+    public ArrayList<Vendedor> listarVendedores() {
+        return admin.getVendedores();
     }
 }
