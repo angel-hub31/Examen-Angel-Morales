@@ -1,0 +1,69 @@
+{
+  "info": {
+    "_postman_id": "155ffac1-c1e9-423e-87bd-2199e114e0dd",
+    "name": "Pruebas Postman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54487337",
+    "_collection_link": "https://go.postman.co/collection/54487337-155ffac1-c1e9-423e-87bd-2199e114e0dd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Agregar",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cedula\":\"0101\",\r\n    \"tipo\":\"V\",\r\n    \"sueldoFijo\":500,\r\n    \"numeroVentas\":0,\r\n    \"comisionPorVenta\":0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/vendedores/agregar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "vendedores",
+            "agregar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "calcular",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8085/vendedores/calcular/0303",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "vendedores",
+            "calcular",
+            "0303"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listar",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
