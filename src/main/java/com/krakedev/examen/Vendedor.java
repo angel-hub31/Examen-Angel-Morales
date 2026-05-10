@@ -9,10 +9,21 @@ public class Vendedor {
 
 	public Vendedor(String cedula) {
 		this.cedula = cedula;
+		this.tipo = tipo;
 	}
 
 	public String getCedula() {
 		return cedula;
+	}
+
+	
+		
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	// metodo calcularSueldo
