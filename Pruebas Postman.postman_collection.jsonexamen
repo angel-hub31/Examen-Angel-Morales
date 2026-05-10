@@ -14,7 +14,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"cedula\":\"0101\",\r\n    \"tipo\":\"V\",\r\n    \"sueldoFijo\":500,\r\n    \"numeroVentas\":0,\r\n    \"comisionPorVenta\":0\r\n}",
+          "raw": "{\r\n    \"cedula\": \"1711112222\",\r\n    \"tipo\": \"M\",\r\n    \"sueldoFijo\": 500.0,\r\n    \"numeroVentas\": 5\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -42,7 +42,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8085/vendedores/calcular/0303",
+          "raw": "http://localhost:8085/vendedores/calcular/1755554444",
           "protocol": "http",
           "host": [
             "localhost"
@@ -51,7 +51,7 @@
           "path": [
             "vendedores",
             "calcular",
-            "0303"
+            "1755554444"
           ]
         }
       },
@@ -59,9 +59,33 @@
     },
     {
       "name": "listar",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/vendedores/listar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "vendedores",
+            "listar"
+          ]
+        }
       },
       "response": []
     }
