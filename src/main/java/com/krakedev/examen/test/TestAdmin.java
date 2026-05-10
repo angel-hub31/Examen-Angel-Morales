@@ -2,6 +2,7 @@ package com.krakedev.examen.test;
 
 import com.krakedev.examen.Vendedor;
 import com.krakedev.examen.VendedorComision;
+import com.krakedev.examen.VendedorMixto;
 
 public class TestAdmin {
 
