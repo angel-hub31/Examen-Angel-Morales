@@ -15,6 +15,13 @@ public class Vendedor {
 	public String getCedula() {
 		return cedula;
 	}
+	
+	// metodo calcularSueldo
+	 public double calcularSueldo() {
+	        return sueldoFijo;
+	    }
+	
+	
 	public void setCedula(String cedula) {
 		this.cedula = cedula;
 	}
